@@ -4,6 +4,8 @@ import Navbar from "./navbar";
 import front from "./../assets/front4.png";
 import sunMobile from "./../assets/sunMobile.jpg";
 import music from "./../assets/musicplay.png";
+import fond1 from "./../assets/fond4.png";
+import fond2 from "./../assets/fond3.png";
 
 export default function Main() {
   const [scroller, setScroller] = useState(null);
@@ -11,9 +13,30 @@ export default function Main() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroller(window.scrollY);
+      console.log(window.scrollY);
     });
   }, []);
 
+  return <HomeDesktop scroller={scroller} />;
+}
+
+// Version Desktop
+function HomeDesktop({ scroller }) {
+  return (
+    <div className="w-full h-[55vw] bg-[#9C9B99] relative">
+      <Navbar />
+      <img src={fond1} alt="Figure Fond" className="w-full z-30 absolute " />
+      <img
+        src={fond2}
+        alt="Figure Fond"
+        className="w-[60%] absolute right-0 bottom-2 z-10 "
+      />
+    </div>
+  );
+}
+
+//Version de Mobile
+function HomeMobile({ scroller }) {
   return (
     <div className="w-[100%] h-auto fixed rounded-b-[30px] overflow-hidden">
       <img
