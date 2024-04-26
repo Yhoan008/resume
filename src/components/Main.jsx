@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import front from "./../assets/front4.png";
 import sunMobile from "./../assets/sunMobile.jpg";
 import music from "./../assets/musicplay.png";
@@ -31,6 +31,17 @@ function HomeDesktop({ scroller }) {
         alt="Figure Fond"
         className="w-[60%] absolute right-0 bottom-2 z-10 "
       />
+      <div
+        className="w-[50px] h-[50px] rounded-full bg-[#E9995E] fixed left-0 right-0 top-0 m-auto flex items-center justify-center"
+        style={{
+          transform: `translateY(${
+            scroller > 80 ? 0.3 : 20 - scroller / 4
+          }vw) scale(${scroller > 80 ? 100 : 270 - scroller * 2}%) `,
+          zIndex: `${scroller > 60 ? 50 : 20}`,
+        }}
+      >
+        <img src={music} alt="Music Play" className="w-[80%] h-[80%] " />
+      </div>
     </div>
   );
 }

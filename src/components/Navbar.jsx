@@ -1,7 +1,5 @@
 import React from "react";
 
-import music from "./../assets/musicplay.png";
-
 export default function Navbar() {
   return <NavDesktop />;
 }
@@ -9,9 +7,7 @@ export default function Navbar() {
 function NavDesktop() {
   return (
     <div className="w-full h-10 py bg-black fixed top-0 z-40 ">
-      <div className="w-[50px] h-[50px] rounded-full bg-[#E9995E] absolute z-20 flex items-center justify-center ">
-        <img src={music} alt="Music Play" className="w-[80%] h-[80%] " />
-      </div>
+      
     </div>
   );
 }
