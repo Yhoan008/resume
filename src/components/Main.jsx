@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import front from "./../assets/front4.png";
 import sunMobile from "./../assets/sunMobile.jpg";
-import music from "./../assets/musicplay.png";
+import music from "./../assets/headphone.png";
 import fond1 from "./../assets/fond4.png";
 import fond2 from "./../assets/fond3.png";
 
@@ -32,17 +32,35 @@ function HomeDesktop({ scroller }) {
         className="w-[60%] absolute right-0 bottom-2 z-10 "
       />
       <div
-        className="w-[50px] h-[50px] rounded-full bg-[#E9995E] fixed left-0 right-0 top-0 m-auto flex items-center justify-center"
+        className="w-[135px] h-[135px] rounded-full bg-[#E9995E] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition "
         style={{
           transform: `translateY(${
-            scroller > 80 ? 0.3 : 20 - scroller / 4
-          }vw) scale(${scroller > 80 ? 100 : 270 - scroller * 2}%) `,
+            scroller > 80 ? -3 : 17 - scroller / 4
+          }vw) scale(${scroller > 60 ? 40 : 100 - scroller}%) `,
           zIndex: `${scroller > 60 ? 50 : 20}`,
         }}
       >
+        <div className="w-10 h-10  absolute bottom-4 flex justify-center items-center">
+          <Line state={8} />
+          <Line state={15} />
+          <Line state={25} />
+          <Line state={15} />
+          <Line state={8} />
+        </div>
         <img src={music} alt="Music Play" className="w-[80%] h-[80%] " />
       </div>
     </div>
+  );
+}
+
+function Line({ state }) {
+  // Variacion en heigh de 2 a 6
+
+  return (
+    <div
+      className="w-[5px] h-6 bg-black rounded mx-[2px] animate-[musicBar_1s_ease-in-out_infinite] delay-1000 "
+      style={{ height: `${state}px` }}
+    />
   );
 }
 
