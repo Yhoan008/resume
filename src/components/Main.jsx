@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import Navbar from "./Navbar";
 import front from "./../assets/front4.png";
 import sunMobile from "./../assets/sunMobile.jpg";
 import music from "./../assets/headphone.png";
@@ -17,14 +16,17 @@ export default function Main() {
     });
   }, []);
 
-  return <HomeDesktop scroller={scroller} />;
+  return (
+    <>
+      <HomeDesktop scroller={scroller} />{" "}
+    </>
+  );
 }
 
 // Version Desktop
 function HomeDesktop({ scroller }) {
   return (
     <div className="w-full h-[55vw] bg-[#9C9B99] relative">
-      <Navbar />
       <img src={fond1} alt="Figure Fond" className="w-full z-30 absolute " />
       <img
         src={fond2}
@@ -35,7 +37,7 @@ function HomeDesktop({ scroller }) {
         className="w-[135px] h-[135px] rounded-full bg-[#E9995E] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition "
         style={{
           transform: `translateY(${
-            scroller > 80 ? -3 : 17 - scroller / 4
+            scroller > 80 ? -2.6 : 17 - scroller / 4
           }vw) scale(${scroller > 60 ? 40 : 100 - scroller}%) `,
           zIndex: `${scroller > 60 ? 50 : 20}`,
         }}
