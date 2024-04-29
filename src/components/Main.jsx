@@ -6,7 +6,7 @@ import music from "./../assets/headphone.png";
 import fond1 from "./../assets/fond4.png";
 import fond2 from "./../assets/fond3.png";
 
-export default function Main() {
+export default function Main({responsive}) {
   const [scroller, setScroller] = useState(null);
 
   useEffect(() => {
@@ -16,10 +16,12 @@ export default function Main() {
     });
   }, []);
 
-  return (
-    <>
-      <HomeDesktop scroller={scroller} />{" "}
-    </>
+  // < 768 es tomado por movil
+
+  return responsive < 768 ? (
+    <HomeMobile scroller={scroller} />
+  ) : (
+    <HomeDesktop scroller={scroller} />
   );
 }
 
@@ -78,7 +80,6 @@ function HomeMobile({ scroller }) {
           height: `${window.scrollY < 120 ? 170 - scroller : 50}px`,
         }}
       />
-      <Navbar />
       <div className=" w-[70px] h-[70px] bg-slate-300 rounded-full absolute bottom-20 right-0 m-2 overflow-hidden border-slate-300 border-2 flex justify-center ">
         <img
           src={front}
