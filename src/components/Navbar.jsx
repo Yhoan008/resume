@@ -106,16 +106,16 @@ function NavMobile() {
         <div className="flex justify-between items-end ">
           {/* Hace falta agregar los enlaces */}
           <div className="flex flex-col gap-2 ml-3 mb-4 ">
-            <a href="#" className="w-10 h-10">
+            <a href="#" className="w-8 h-10">
               <img src={mail} alt="icon Mail" className="w-full" />
             </a>
-            <a href="#" className="w-10 h-10">
+            <a href="#" className="w-8 h-10">
               <img src={git} alt="icon Git" className="w-full" />
             </a>
-            <a href="#" className="w-10 h-10">
+            <a href="#" className="w-8 h-10">
               <img src={wha} alt="icon WahtsApp" className="w-full" />
             </a>
-            <a href="#" className="w-10 h-10">
+            <a href="#" className="w-8 h-10">
               <img src={linkedin} alt="icon Linkedin" className="w-full" />
             </a>
           </div>

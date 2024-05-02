@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
+import Content from "./components/Content";
 import Pruebas from "./components/Pruebas";
 import Particles from "./components/Particles";
 
@@ -15,10 +16,10 @@ export default function App() {
   });
 
   return (
-    <main className="w-full h-[200vh] ">
+    <main className="w-full h-[200vh] bg-[#2A3145]  ">
       <Navbar responsive={responsive} />
       <Main responsive={responsive} />
-      <div>content</div>
+      <Content />
     </main>
   );
 }
