@@ -6,6 +6,10 @@ import { Link, Element, Events } from "react-scroll";
 // React Scroll
 
 export default function Pruebas() {
+  return <div>hola mundo</div>;
+}
+
+function ReactScroller() {
   return (
     <div className="w-full h-[300vh] flex flex-col align-middle bg-[#001011] ">
       <div></div>
@@ -22,7 +26,7 @@ export default function Pruebas() {
           smooth={true}
           duration={500}
           to="pagetwo"
-          className="p-2 bg-[#97C8EB] rounded-md cursor-pointer font-bold hover:scale-125 transition-transform "
+          className="p-2 bg-[#161c20] rounded-md cursor-pointer font-bold hover:scale-125 transition-transform "
         >
           SCROLLER TO PAGE TWO
         </Link>

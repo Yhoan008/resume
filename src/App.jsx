@@ -15,11 +15,11 @@ export default function App() {
     });
   });
 
-  return (
-    <main className="w-full h-[200vh] bg-[#2A3145]  ">
+  return <Pruebas />;
+
+  /*<main className="w-full h-[200vh] bg-[#2A3145]  ">
       <Navbar responsive={responsive} />
       <Main responsive={responsive} />
-      <Content />
-    </main>
-  );
+      <Content responsive={responsive} />
+  </main>*/
 }
