@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 
 import front from "./../assets/front4.png";
 import sunMobile from "./../assets/sunMobile.jpg";
@@ -6,15 +6,10 @@ import music from "./../assets/headphone.png";
 import fond1 from "./../assets/fond4.png";
 import fond2 from "./../assets/fond3.png";
 
-export default function Main({responsive}) {
-  const [scroller, setScroller] = useState(null);
+import { ScrollerContext } from "./../context/Scroller";
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroller(window.scrollY);
-      console.log(window.scrollY);
-    });
-  }, []);
+export default function Main({ responsive }) {
+  const scroller = useContext(ScrollerContext);
 
   // < 768 es tomado por movil
 
@@ -59,6 +54,7 @@ function HomeDesktop({ scroller }) {
 
 function Line({ state }) {
   // Variacion en heigh de 2 a 6
+  // aca estoy usando una animacion prediseñada desde tailwind.config.js
 
   return (
     <div

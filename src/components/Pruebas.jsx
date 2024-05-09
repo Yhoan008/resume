@@ -1,12 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Link, Element, Events } from "react-scroll";
 
 //Documento destinado a hacer prubas con funcionalidades para la pagina
 // Sustraccion por superposicion
 // React Scroll
 
+const ThemeContext = createContext(null);
 export default function Pruebas() {
-  return <div>hola mundo</div>;
+  return (
+    <ThemeContext.Provider value="dark">
+      <Form />
+    </ThemeContext.Provider>
+  );
+}
+
+function Form({ children }) {
+  const theme = useContext(ThemeContext);
+
+  console.log(theme)
+
+  return <div>{theme}</div>;
 }
 
 function ReactScroller() {

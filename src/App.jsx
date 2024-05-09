@@ -6,6 +6,8 @@ import Content from "./components/Content";
 import Pruebas from "./components/Pruebas";
 import Particles from "./components/Particles";
 
+import ScrollerProvider from "./context/Scroller";
+
 export default function App() {
   const [responsive, setResponsive] = useState(window.innerWidth);
 
@@ -13,13 +15,13 @@ export default function App() {
     window.addEventListener("resize", () => {
       setResponsive(window.innerWidth);
     });
-  });
+  }, []);
 
-  return <Pruebas />;
-
-  /*<main className="w-full h-[200vh] bg-[#2A3145]  ">
+  return (
+    <ScrollerProvider>
       <Navbar responsive={responsive} />
       <Main responsive={responsive} />
       <Content responsive={responsive} />
-  </main>*/
+    </ScrollerProvider>
+  );
 }
