@@ -1,19 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
-
-//Sin funcionamiento es mejor intentarlo en un js 
-
+//Sin funcionamiento es mejor intentarlo en un js
 
 export default function Particles() {
-  const canvas = useRef(null);
-
-  const [horizon, setHorizon] = useState(10);
-  const [vertic, setVertic] = useState(10);
+  const canvas = useRef();
 
   useEffect(() => {
+    const ctx = canvas.current.getContext("2d");
     if (canvas.current.getContext) {
-      const ctx = canvas.current.getContext("2d");
-
       class Particle {
         constructor(x, y, directionX, directionY, size, color) {
           this.x = x;
@@ -32,10 +26,16 @@ export default function Particles() {
         }
 
         update() {
-          if (this.x > canvas.width || this.x < 0) {
+          if (
+            this.x + this.size > canvas.current.width ||
+            this.x - this.size < 0
+          ) {
             this.directionX = -this.directionX;
           }
-          if (this.y > canvas.height || this.y < 0) {
+          if (
+            this.y + this.size > canvas.current.height ||
+            this.y - this.size < 0
+          ) {
             this.directionY = -this.directionY;
           }
 
@@ -47,32 +47,33 @@ export default function Particles() {
         }
       }
 
-      let particlesArray = [];
+      let particles = [];
+
       function init() {
-        for (let i = 0; i < 20; i++) {
-          let size = 20;
-          let x = 10;
-          let y = 10;
+        for (let i = 0; i <= 2; i++) {
+          let x = Math.random() * 500;
+          let y = Math.random() * 300;
           let directionX = Math.random() * 5 - 2;
           let directionY = Math.random() * 5 - 2;
+          let size = 10;
           let color = "#8C5523";
 
-          particlesArray.push(
+          particles.push(
             new Particle(x, y, directionX, directionY, size, color)
           );
-          particlesArray[2].draw()
         }
       }
 
       function animate() {
         requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i <= particlesArray; i++) {
-          particlesArray[i].update();
+        ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
         }
       }
 
       init();
+      requestAnimationFrame(animate);
 
       return () => cancelAnimationFrame(animate);
     } else {

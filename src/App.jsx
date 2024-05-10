@@ -17,11 +17,13 @@ export default function App() {
     });
   }, []);
 
-  return (
+  /*return (
     <ScrollerProvider>
       <Navbar responsive={responsive} />
       <Main responsive={responsive} />
       <Content responsive={responsive} />
     </ScrollerProvider>
-  );
+  );*/
+
+  return <Particles />;
 }
