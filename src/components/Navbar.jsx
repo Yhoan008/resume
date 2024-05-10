@@ -17,7 +17,7 @@ function NavDesktop() {
   // Falta agregar los eventos de navegacion
 
   return (
-    <div className="w-full h-[50px] fixed top-0 z-40 px-2 pt-4 flex justify-between items-center ">
+    <div className="w-full h-[50px] fixed top-0 z-50 px-2 pt-4 flex justify-between items-center ">
       <div className="h-[40px] flex items-center ">
         <img src={logo} alt="Dragon Y" className="h-full w-auto " />
         <h1 className="text-[#E9D985] text-xl font-['Irish_Grover'] mt-2 ">

@@ -5,6 +5,11 @@ import sunMobile from "./../assets/sunMobile.jpg";
 import music from "./../assets/headphone.png";
 import fond1 from "./../assets/fond4.png";
 import fond2 from "./../assets/fond3.png";
+import downIcon from "./../assets/downIcon.png";
+import mail from "./../assets/mail.png";
+import linkedin from "./../assets/linkedin.png";
+import git from "./../assets/git.png";
+import wha from "./../assets/wha.png";
 
 import { ScrollerContext } from "./../context/Scroller";
 
@@ -23,7 +28,44 @@ export default function Main({ responsive }) {
 // Version Desktop
 function HomeDesktop({ scroller }) {
   return (
-    <div className="w-full h-[55vw] bg-[#9C9B99] relative">
+    <div className="w-full h-[55vw] bg-[#9C9B99] relative ">
+      <div className="absolute w-full h-full z-40 text-white flex flex-row ">
+        <div className="flex justify-center flex-col items-center w-full p-10 ">
+          <h1 className="mr-[50%] font-['Itim'] ">HOLA! SOY</h1>
+          <h1 className="font-['Iris_Grover'] text-4xl font-extrabold ">
+            YHOAN MATEO
+          </h1>
+          <h1 className="font-['Itim'] ml-[50%] w-full ">
+            Desarrollador y Diseñador UX.
+          </h1>
+        </div>
+        <div className="flex flex-col justify-end items-end p-10 w-full gap-4 ">
+          <div className="flex flex-row gap-4 ml-3 mb-4 ">
+            <a href="#" className="w-9 h-10">
+              <img src={mail} alt="icon Mail" className="w-full" />
+            </a>
+            <a href="#" className="w-9 h-10">
+              <img src={git} alt="icon Git" className="w-full" />
+            </a>
+            <a href="#" className="w-9 h-10">
+              <img src={wha} alt="icon WahtsApp" className="w-full" />
+            </a>
+            <a href="#" className="w-9 h-10">
+              <img src={linkedin} alt="icon Linkedin" className="w-full" />
+            </a>
+          </div>
+          <button className="flex h-[20px] justify-center items-center gap-2 bg-[#E9D985] p-2 box-content rounded-xl ">
+            <h1 className="font-['Itim'] text-xl text-black font-bold ">CV</h1>
+            <div className="h-full ">
+              <img
+                src={downIcon}
+                alt="Download Icon"
+                className="h-[100%] w-auto "
+              />
+            </div>
+          </button>
+        </div>
+      </div>
       <img src={fond1} alt="Figure Fond" className="w-full z-30 absolute " />
       <img
         src={fond2}
