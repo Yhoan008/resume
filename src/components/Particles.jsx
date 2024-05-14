@@ -1,11 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 //Sin funcionamiento es mejor intentarlo en un js
 
 export default function Particles() {
   const canvas = useRef();
 
+  const [mouseX, setMouseX] = useState();
+  const [mouseY, setMouseY] = useState();
+
   useEffect(() => {
+    window.addEventListener("mousemove", (event) => {
+      setMouseX(event.clientX);
+      setMouseY(event.clientY);
+    });
+
     const ctx = canvas.current.getContext("2d");
     if (canvas.current.getContext) {
       class Particle {
@@ -50,13 +58,13 @@ export default function Particles() {
       let particles = [];
 
       function init() {
-        for (let i = 0; i <= 2; i++) {
+        for (let i = 0; i <= canvas.current.width / 10; i++) {
           let x = Math.random() * 500;
           let y = Math.random() * 300;
           let directionX = Math.random() * 5 - 2;
           let directionY = Math.random() * 5 - 2;
-          let size = 10;
-          let color = "#8C5523";
+          let size = Math.random() * (5 - 2) + 2;
+          let color = "#011A37";
 
           particles.push(
             new Particle(x, y, directionX, directionY, size, color)
@@ -68,7 +76,21 @@ export default function Particles() {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
         for (let i = 0; i < particles.length; i++) {
-          particles[i].update();
+          if (particles[i].x) particles[i].update();
+          for (let j = 0; j < particles.length; j++) {
+            let distanceX = Math.abs(particles[i].x - particles[j].x);
+            let distanceY = Math.abs(particles[i].y - particles[j].y);
+            let distance = Math.sqrt(
+              distanceX * distanceX + distanceY * distanceY
+            );
+            if (distance < 80) {
+              ctx.beginPath();
+              ctx.strokeStyle = "#011A37";
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
         }
       }
 
@@ -82,15 +104,13 @@ export default function Particles() {
   }, []);
 
   return (
-    <div className="w-full h-[100vh] flex justify-center items-center ">
+    <div className="w-auto h-auto absolute right-0 top-0 z-0 ">
       <canvas
-        width={500}
-        height={300}
+        width={(window.innerWidth * 2) / 3}
+        height={window.innerHeight / 2}
         ref={canvas}
-        className="border-2 border-black"
-      >
-        {" "}
-      </canvas>
+        className=" "
+      ></canvas>
     </div>
   );
 }

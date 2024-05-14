@@ -11,10 +11,14 @@ import linkedin from "./../assets/linkedin.png";
 import git from "./../assets/git.png";
 import wha from "./../assets/wha.png";
 
-import { ScrollerContext } from "./../context/Scroller";
+import Particles from "./Particles";
 
-export default function Main({ responsive }) {
+import { ScrollerContext } from "./../context/Scroller";
+import { ResponsiveContext } from "../context/Responsive";
+
+export default function Main() {
   const scroller = useContext(ScrollerContext);
+  const responsive = useContext(ResponsiveContext);
 
   // < 768 es tomado por movil
 
@@ -32,11 +36,9 @@ function HomeDesktop({ scroller }) {
       <div className="absolute w-full h-full z-40 text-white flex flex-row ">
         <div className="flex justify-center flex-col items-center w-full p-10 ">
           <h1 className="mr-[50%] font-['Itim'] ">HOLA! SOY</h1>
-          <h1 className="font-['Iris_Grover'] text-4xl font-extrabold ">
-            YHOAN MATEO
-          </h1>
-          <h1 className="font-['Itim'] ml-[50%] w-full ">
-            Desarrollador y Diseñador UX.
+          <h1 className="font-['Irish_Grover'] text-4xl ">YHOAN MATEO</h1>
+          <h1 className="font-['Itim'] ml-[70%] w-full ">
+            DESARROLLADOR Y DISEÑADOR WEB
           </h1>
         </div>
         <div className="flex flex-col justify-end items-end p-10 w-full gap-4 ">
@@ -66,6 +68,8 @@ function HomeDesktop({ scroller }) {
           </button>
         </div>
       </div>
+      {/* Elemento Canvas */}
+      <Particles />
       <img src={fond1} alt="Figure Fond" className="w-full z-30 absolute " />
       <img
         src={fond2}

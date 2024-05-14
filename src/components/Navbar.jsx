@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import logo from "./../assets/Logo4.png";
 import front from "./../assets/front.png";
@@ -9,7 +9,11 @@ import wha from "./../assets/wha.png";
 import homecinema from "./../assets/homecinema.png";
 import soundSearch from "./../assets/soundSearch.png";
 
-export default function Navbar({ responsive }) {
+import { ResponsiveContext } from "../context/Responsive";
+
+export default function Navbar() {
+  const responsive = useContext(ResponsiveContext);
+
   return responsive < 768 ? <NavMobile /> : <NavDesktop />;
 }
 

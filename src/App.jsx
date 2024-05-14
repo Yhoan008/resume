@@ -7,23 +7,16 @@ import Pruebas from "./components/Pruebas";
 import Particles from "./components/Particles";
 
 import ScrollerProvider from "./context/Scroller";
+import ResponsiveProvider from "./context/Responsive";
 
 export default function App() {
-  const [responsive, setResponsive] = useState(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setResponsive(window.innerWidth);
-    });
-  }, []);
-
-  /*return (
+  return (
     <ScrollerProvider>
-      <Navbar responsive={responsive} />
-      <Main responsive={responsive} />
-      <Content responsive={responsive} />
+      <ResponsiveProvider>
+        <Navbar />
+        <Main />
+        <Content />
+      </ResponsiveProvider>
     </ScrollerProvider>
-  );*/
-
-  return <Particles />;
+  );
 }
