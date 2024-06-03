@@ -77,14 +77,16 @@ function HomeDesktop({ scroller }) {
       <div
         className={` w-[${window.innerWidth}px] h-[${window.innerWidth}px] shadow-[inset_0_0_0_350px_black] absolute z-20 rounded-full `}
       />
+      <div className="w-[200vh] h-[200vh] absolute left-0 right-0 top-0 bottom-0 m-auto transitions z-20 shadow-[inset_0_0_0_100px_black] rounded-full " />
       <div
-        className="w-[135px] h-[135px] rounded-full bg-[#E9995E] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 "
+        className="w-[135px] h-[135px] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 "
         style={{
           transform: `translateY(${
             scroller > 80 ? -2.6 : 17 - scroller / 4
           }vw) scale(${scroller > 60 ? 40 : 100 - scroller}%) `,
         }}
       >
+        <div className=" w-full h-full absolute rounded-full bg-[#E9995E] " />
         <div className="w-10 h-10  absolute bottom-4 flex justify-center items-center">
           <Line state={8} />
           <Line state={15} />
@@ -92,7 +94,11 @@ function HomeDesktop({ scroller }) {
           <Line state={15} />
           <Line state={8} />
         </div>
-        <img src={music} alt="Music Play" className="w-[80%] h-[80%] " />
+        <img
+          src={music}
+          alt="Music Play"
+          className="w-[80%] h-[80%] absolute "
+        />
       </div>
     </div>
   );
