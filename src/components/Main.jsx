@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 
 import front from "./../assets/front4.png";
+import background from "./../assets/background.png";
 import sunMobile from "./../assets/sunMobile.jpg";
 import music from "./../assets/headphone.png";
-import fond1 from "./../assets/fond4.png";
-import fond2 from "./../assets/fond3.png";
 import downIcon from "./../assets/downIcon.png";
 import mail from "./../assets/mail.png";
 import linkedin from "./../assets/linkedin.png";
@@ -33,7 +32,7 @@ export default function Main() {
 function HomeDesktop({ scroller }) {
   return (
     <div className="w-full h-[55vw] bg-[#9C9B99] relative ">
-      <div className="absolute w-full h-full z-40 text-white flex flex-row ">
+      <div className="absolute w-full h-full z-10 text-white flex flex-row ">
         <div className="flex justify-center flex-col items-center w-full p-10 ">
           <h1 className="mr-[50%] font-['Itim'] ">HOLA! SOY</h1>
           <h1 className="font-['Irish_Grover'] text-4xl ">YHOAN MATEO</h1>
@@ -41,7 +40,7 @@ function HomeDesktop({ scroller }) {
             DESARROLLADOR Y DISEÑADOR WEB
           </h1>
         </div>
-        <div className="flex flex-col justify-end items-end p-10 w-full gap-4 ">
+        <div className="flex flex-col justify-end items-end m-[100px] w-full gap-4 ">
           <div className="flex flex-row gap-4 ml-3 mb-4 ">
             <a href="#" className="w-9 h-10">
               <img src={mail} alt="icon Mail" className="w-full" />
@@ -70,21 +69,24 @@ function HomeDesktop({ scroller }) {
       </div>
       {/* Elemento Canvas */}
       <Particles />
-      <img src={fond1} alt="Figure Fond" className="w-full z-30 absolute " />
       <img
-        src={fond2}
+        src={background}
         alt="Figure Fond"
-        className="w-[60%] absolute right-0 bottom-2 z-10 "
+        className="w-[100%] absolute right-0 bottom-2 z-0 "
       />
       <div
-        className="w-[135px] h-[135px] rounded-full bg-[#E9995E] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition "
+        className={` w-[${window.innerWidth}px] h-[${window.innerWidth}px] shadow-[inset_0_0_0_350px_black] absolute z-20 rounded-full `}
+      />
+      <div className="w-[200vh] h-[200vh] absolute left-0 right-0 top-0 bottom-0 m-auto transitions z-20 shadow-[inset_0_0_0_100px_black] rounded-full " />
+      <div
+        className="w-[135px] h-[135px] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 "
         style={{
           transform: `translateY(${
             scroller > 80 ? -2.6 : 17 - scroller / 4
           }vw) scale(${scroller > 60 ? 40 : 100 - scroller}%) `,
-          zIndex: `${scroller > 60 ? 50 : 20}`,
         }}
       >
+        <div className=" w-full h-full absolute rounded-full bg-[#E9995E] " />
         <div className="w-10 h-10  absolute bottom-4 flex justify-center items-center">
           <Line state={8} />
           <Line state={15} />
@@ -92,7 +94,11 @@ function HomeDesktop({ scroller }) {
           <Line state={15} />
           <Line state={8} />
         </div>
-        <img src={music} alt="Music Play" className="w-[80%] h-[80%] " />
+        <img
+          src={music}
+          alt="Music Play"
+          className="w-[80%] h-[80%] absolute "
+        />
       </div>
     </div>
   );

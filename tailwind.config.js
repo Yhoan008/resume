@@ -7,10 +7,11 @@ export default {
       keyframes: {
         musicBar: {
           "0%": { transform: "scaleY(1)" },
-          "15%": { transform: "scaleY(1.6)" },
+          "15%": { transform: "scaleY(1.8)" },
           "30%": { transform: "scaleY(.8)" },
+          "50%": { transform: "scaleY(1.8)" },
           "70%": { transform: "scaleY(.8)" },
-          "85%": { transform: "scaleY(1.6)" },
+          "85%": { transform: "scaleY(1.8)" },
           "100%": { transform: "scaleY(1)" },
         },
       },
