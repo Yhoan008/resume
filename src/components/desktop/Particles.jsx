@@ -1,19 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 //Sin funcionamiento es mejor intentarlo en un js
 
 export default function Particles() {
   const canvas = useRef();
 
-  const [mouseX, setMouseX] = useState();
-  const [mouseY, setMouseY] = useState();
-
   useEffect(() => {
-    window.addEventListener("mousemove", (event) => {
-      setMouseX(event.clientX);
-      setMouseY(event.clientY);
-    });
-
     const ctx = canvas.current.getContext("2d");
     if (canvas.current.getContext) {
       class Particle {

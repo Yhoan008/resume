@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-import Main from "./components/Main";
-import Navbar from "./components/Navbar";
-import Content from "./components/Content";
 import Pruebas from "./components/Pruebas";
-import Particles from "./components/Particles";
 
 import ScrollerProvider from "./context/Scroller";
-import ResponsiveProvider from "./context/Responsive";
+import Mobile from "./components/mobile/Mobile";
+import Desktop from "./components/desktop/Desktop";
 
 export default function App() {
+  const [respon, setRespond] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setRespond(window.innerWidth);
+    });
+  }, []);
+
   return (
     <ScrollerProvider>
-      <ResponsiveProvider>
-        <Navbar />
-        <Main />
-        <Content />
-      </ResponsiveProvider>
+      {window.innerWidth >= 768 ? <Desktop /> : <Mobile />}
     </ScrollerProvider>
   );
 }
