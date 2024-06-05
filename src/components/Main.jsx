@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import front from "./../assets/front4.png";
 import background from "./../assets/background.png";
@@ -31,7 +31,7 @@ export default function Main() {
 // Version Desktop
 function HomeDesktop({ scroller }) {
   return (
-    <div className="w-full h-[55vw] bg-[#9C9B99] relative ">
+    <div className="w-full h-[55vw] bg-[#9C9B99] relative flex justify-center items-center ">
       <div className="absolute w-full h-full z-10 text-white flex flex-row ">
         <div className="flex justify-center flex-col items-center w-full p-10 ">
           <h1 className="mr-[50%] font-['Itim'] ">HOLA! SOY</h1>
@@ -77,7 +77,7 @@ function HomeDesktop({ scroller }) {
       <div
         className={` w-[${window.innerWidth}px] h-[${window.innerWidth}px] shadow-[inset_0_0_0_350px_black] absolute z-20 rounded-full `}
       />
-      <div className="w-[200vh] h-[200vh] absolute left-0 right-0 top-0 bottom-0 m-auto transitions z-20 shadow-[inset_0_0_0_100px_black] rounded-full " />
+      <Shadow />
       <div
         className="w-[135px] h-[135px] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 "
         style={{
@@ -101,6 +101,27 @@ function HomeDesktop({ scroller }) {
         />
       </div>
     </div>
+  );
+}
+
+function Shadow() {
+  const [shadowActive, setShadowActive] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setShadowActive(false);
+    });
+  });
+
+  // inset de 800px
+
+  return (
+    <div
+      className="w-[250vh] h-[250vh] absolute transition-shadow z-20  rounded-full -translate-y-20"
+      style={{
+        boxShadow: `inset 0 0 0 ${shadowActive == true ? 800 : 0}px black`,
+      }}
+    />
   );
 }
 
