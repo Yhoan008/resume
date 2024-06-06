@@ -3,14 +3,14 @@ import React, { useContext } from "react";
 import { ScrollerContext } from "../../context/Scroller";
 
 import sunMobile from "./../../assets/sunMobile.jpg";
-import music from "./../../assets/headphone.png";
+import music from "./../../assets/musicplay.png";
 import front from "./../../assets/front4.png"
 
 export default function Home() {
   const scroller = useContext(ScrollerContext);
 
   return (
-    <div className="w-[100%] h-auto fixed rounded-b-[30px] overflow-hidden">
+    <div className="w-full h-auto fixed z-10 top-0 rounded-b-[30px] overflow-hidden">
       <img
         src={sunMobile}
         alt="sunMobile"

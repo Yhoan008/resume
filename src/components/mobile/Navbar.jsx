@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <>
       <button
-        className="w-[25px] h-auto m-[15px] fixed top-0 left-0 flex flex-col justify-around gap-1 z-10 "
+        className="w-[25px] h-auto m-[15px] fixed top-0 left-0 flex flex-col justify-around gap-1 z-20 "
         onClick={() => {
           setNavActive(true);
         }}
