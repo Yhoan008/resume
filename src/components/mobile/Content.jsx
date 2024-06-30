@@ -1,5 +1,7 @@
 import React from "react";
 
+import water from "./../../assets/water-florida.gif";
+
 export default function Content() {
   return (
     <div className=" w-full h-[200vh] absolute bg-[#2A3145] ">
@@ -15,8 +17,8 @@ export default function Content() {
           gestión de servidores y bases de datos noSQL.{" "}
         </p>
       </div>
-      <div>
-        <img src="" alt="" />
+      <div className="w-full h-auto rounded-full overflow-hidden " >
+        <img src={water} alt="WaterFlorida" className="w-full h-auto"  />
       </div>
     </div>
   );
