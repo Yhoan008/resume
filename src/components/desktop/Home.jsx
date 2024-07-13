@@ -17,7 +17,7 @@ export default function Home() {
 
   // < 768 es tomado por movil
   return (
-    <div className="w-full h-[55vw] bg-[#9C9B99] relative flex justify-center items-center ">
+    <div className="w-full h-[50vw] bg-[#9C9B99] relative flex justify-center items-center ">
       <div className="absolute w-full h-full z-10 text-white flex flex-row ">
         <div className="flex justify-center flex-col items-center w-full p-10 ">
           <h1 className="mr-[50%] font-['Itim'] ">HOLA! SOY</h1>
@@ -58,7 +58,7 @@ export default function Home() {
       <img
         src={background}
         alt="Figure Fond"
-        className="w-[100%] absolute right-0 bottom-2 z-0 "
+        className="w-[100%] right-0 bottom-2 z-0 "
       />
       <div
         className={` w-[${window.innerWidth}px] h-[${window.innerWidth}px] shadow-[inset_0_0_0_350px_black] absolute z-20 rounded-full `}
