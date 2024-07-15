@@ -8,7 +8,6 @@ export default function ScrollerProvider({ children }) {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroller(window.scrollY);
-      console.log(window.scrollY)
     });
   }, []);
 
