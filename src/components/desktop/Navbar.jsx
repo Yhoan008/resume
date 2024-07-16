@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ScrollerContext } from "../../context/Scroller";
 
 import logo from "./../../assets/Logo4.png";
 
 export default function Navbar() {
+  const scroller = useContext(ScrollerContext);
+
   return (
-    <div className="w-full h-[50px] fixed top-0 z-10 px-2 pt-4 flex justify-between items-center ">
+    <div
+      className="w-full h-[60px] fixed top-0 z-20 px-2 flex justify-between items-center"
+      style={{ backdropFilter: scroller < 100 ? "" : "blur(10px)" }}
+    >
       <div className="h-[40px] flex items-center ">
         <img src={logo} alt="Dragon Y" className="h-full w-auto " />
         <h1 className="text-[#E9D985] text-xl font-['Irish_Grover'] mt-2 ">
