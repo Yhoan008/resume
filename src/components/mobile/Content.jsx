@@ -1,4 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+
+import Scroller from "./Scroller";
+import Footer from "./Footer";
 
 import cont from "./../../assets/cont.png";
 import scheme from "./../../assets/prueba/scheme.jpg";
@@ -6,7 +9,7 @@ import sound from "./../../assets/sound.png";
 
 export default function Content() {
   return (
-    <div className=" w-full h-[200vh] absolute bg-[#2A3145] ">
+    <div className=" w-full absolute bg-[#2A3145] pb-[300px] ">
       <div className="mt-[30vh] text-white p-4  ">
         <h1 className="font-['Irish_Grover'] text-2xl tracking-wider pt-2 ">
           DESARROLLADOR Y DISEÑADOR UX
@@ -41,67 +44,7 @@ export default function Content() {
         <Title title="FUTUROS APRENDIZAJES" />
         <Scroller />
       </div>
-    </div>
-  );
-}
-
-/// EN ESTE ELEMENTO HACE FALTA UN ARRAY VALIDO
-
-function Scroller() {
-  const containerScroll = useRef(null);
-
-  let fase;
-
-  useEffect(() => {
-    fase = containerScroll.current.scrollWidth / 3;
-  });
-
-  return (
-    <div
-      ref={containerScroll}
-      className="w-full flex flex-row overflow-x-scroll gap-5 p-8 scroll-smooth"
-      onScroll={() => {
-        setTimeout(() => {
-          if (
-            containerScroll.current.scrollLeft <
-            containerScroll.current.scrollWidth / 8
-          ) {
-            containerScroll.current.scrollLeft = 0;
-          } else if (
-            containerScroll.current.scrollLeft >=
-              containerScroll.current.scrollWidth / 8 &&
-            containerScroll.current.scrollLeft <=
-              containerScroll.current.scrollWidth / 2.1
-          ) {
-            containerScroll.current.scrollLeft = fase - fase / 15;
-            console.log(containerScroll.current.scrollWidth);
-          } else if (
-            containerScroll.current.scrollLeft >
-            containerScroll.current.scrollWidth / 2.1
-          ) {
-            containerScroll.current.scrollLeft = fase * 2;
-          }
-        }, 500);
-      }}
-    >
-      <div
-        className=" min-w-[80vw] h-[100px] bg-red-700 border-2 border-black "
-        onClick={() => {
-          containerScroll.current.scrollLeft = 0;
-        }}
-      ></div>
-      <div
-        className=" min-w-[80vw] h-[100px] bg-red-700 border-2 border-black "
-        onClick={() => {
-          containerScroll.current.scrollLeft = fase - fase / 15;
-        }}
-      ></div>
-      <div
-        className=" min-w-[80vw] h-[100px] bg-red-700 border-2 border-black "
-        onClick={() => {
-          containerScroll.current.scrollLeft = fase * 2;
-        }}
-      ></div>
+      <Footer />
     </div>
   );
 }
