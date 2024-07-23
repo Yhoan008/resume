@@ -14,6 +14,15 @@ export default {
           "85%": { transform: "scaleY(1.8)" },
           "100%": { transform: "scaleY(1)" },
         },
+        musicPulse: {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(1.4)", opacity: "0" },
+        },
+        loading: {
+          "20%": { transform: "scaleY(6)" },
+          "40%": { transform: "scaleY(2)" },
+          "100%": { transform: "scaleY(1)" },
+        },
       },
       fontFamily: {
         irishGrover: ['"Irish Grover"', "system-ui"],
