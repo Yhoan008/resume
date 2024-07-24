@@ -7,6 +7,9 @@ import git from "./../../assets/git.png";
 import wha from "./../../assets/wha.png";
 import homecinema from "./../../assets/homecinema.png";
 import soundSearch from "./../../assets/soundSearch.png";
+import downicon from "./../../assets/downIcon.png";
+
+import hdv from "./../../assets/HDV.pdf";
 
 export default function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -43,8 +46,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* En las siguientes lineas son las opciones del navbar */}
-
         <div className="flex flex-row mt-4 ml-3 items-center ">
           <div className="w-[60px] h-[60px] border-2 border-white rounded-full bg-white overflow-hidden  ">
             <img src={front} alt="Face" className="w-full" />
@@ -58,7 +59,14 @@ export default function Navbar() {
         <ul className=" ml-5 flex flex-col gap-5 text-white font-medium font-['Itim'] ">
           <li className="flex flex-row items-end gap-2">
             <img src={homecinema} alt="Parlante Icon" className="max-h-8 " />
-            <a href="#">INICIO</a>
+            <a
+              href="#home"
+              onClick={() => {
+                setNavActive(false);
+              }}
+            >
+              INICIO
+            </a>
           </li>
           <li className="flex flex-row items-center gap-2">
             <img
@@ -66,29 +74,54 @@ export default function Navbar() {
               alt="Search Music Icon"
               className="max-h-8 "
             />
-            <a href="#">EXPLORAR</a>
+            <a
+              href="#explore"
+              onClick={() => {
+                setNavActive(false);
+              }}
+            >
+              EXPLORAR
+            </a>
           </li>
         </ul>
 
         <div className="flex justify-between items-end ">
-          {/* Hace falta agregar los enlaces */}
-          <div className="flex flex-col gap-2 ml-3 mb-4 ">
-            <a href="#" className="w-8 h-10">
+          <div className="flex flex-col gap-3 ml-5 mb-4 ">
+            <a className="w-8 h-10" href="mailto:yhoanmoreno8@gmail.com?">
               <img src={mail} alt="icon Mail" className="w-full" />
             </a>
-            <a href="#" className="w-8 h-10">
+            <a
+              href="https://github.com/Yhoan008"
+              target="_blank"
+              className="w-8 h-10"
+            >
               <img src={git} alt="icon Git" className="w-full" />
             </a>
-            <a href="#" className="w-8 h-10">
+            <a
+              href="https://wa.me/573222561871?text=Hola, me gustaria conversar contigo."
+              target="_blank"
+              className="w-8 h-10"
+            >
               <img src={wha} alt="icon WahtsApp" className="w-full" />
             </a>
-            <a href="#" className="w-8 h-10">
+            <a
+              href="https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/"
+              target="_blank"
+              className="w-8 h-10"
+            >
               <img src={linkedin} alt="icon Linkedin" className="w-full" />
             </a>
           </div>
-          <button className="mr-4 mb-4 bg-[#E9D985] px-3 py-2 rounded-xl font-medium tracking-wider font-['Irish_Grover'] ">
-            CONTACTO
-          </button>
+          <a
+            className="mr-4 mb-4 bg-[#E9D985] px-3 py-2 rounded-xl font-medium tracking-wider font-['Irish_Grover'] flex items-center gap-1 text-xl "
+            href={hdv}
+            download="YhoanMoreno.pdf"
+          >
+            CV
+            <div className="w-5 ">
+              <img src={downicon} alt="Download" />
+            </div>
+          </a>
         </div>
       </div>
     </>

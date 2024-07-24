@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Navbar from "./Navbar";
 import Home from "./Home";
@@ -8,6 +8,10 @@ import Future from "./Future";
 import Footer from "./Footer";
 
 export default function Desktop() {
+  useEffect(() => {
+    document.body.style.overflowY = "visible";
+  });
+
   return (
     <>
       <Navbar />
@@ -15,7 +19,7 @@ export default function Desktop() {
       <About />
       <Proyects />
       <Future />
-      <Footer/>
+      <Footer />
     </>
   );
 }

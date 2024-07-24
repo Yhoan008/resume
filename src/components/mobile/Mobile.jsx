@@ -6,6 +6,8 @@ import Content from "./Content";
 import Intro from "./Intro";
 
 export default function Mobile() {
+ 
+
   return (
     <>
       <Intro />

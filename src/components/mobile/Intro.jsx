@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import headphone from "./../../assets/headphone.png";
+
+import introSound from "./../../assets/music/intro.mp3";
 
 export default function Intro() {
   const [active, setActive] = useState(true);
@@ -8,6 +10,7 @@ export default function Intro() {
   useEffect(() => {
     setTimeout(() => {
       setActive(false);
+      document.body.style.overflowY = "visible";
     }, 5000);
   }, []);
 

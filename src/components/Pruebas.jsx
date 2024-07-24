@@ -7,19 +7,12 @@ import { Link, Element, Events } from "react-scroll";
 
 const ThemeContext = createContext(null);
 export default function Pruebas() {
-  return (
-    <ThemeContext.Provider value="dark">
-      <Form />
-    </ThemeContext.Provider>
-  );
-}
 
-function Form({ children }) {
-  const theme = useContext(ThemeContext);
+  useEffect(()=>{
+    document.body.style.overflowY = "visible"
+  })
 
-  console.log(theme)
-
-  return <div>{theme}</div>;
+  return <ReactScroller />;
 }
 
 function ReactScroller() {
@@ -56,29 +49,6 @@ function ReactScroller() {
       >
         <div className="text-white text-2xl font-bold ">THREE PAGE</div>
       </Element>
-      <Point />
     </div>
-  );
-}
-
-function Point() {
-  const [scroller, setScroller] = useState(null);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroller(window.scrollY);
-      console.log(window.scrollY);
-    });
-  }, []);
-
-  const style = {
-    transform: `translateY(${scroller < 500 ? scroller : 500}px)`,
-  };
-
-  return (
-    <div
-      className="w-10 h-10 bg-[#3AAFB9] fixed top-12 left-[50%] right-[50%] mx-auto transition duration-500 "
-      style={style}
-    />
   );
 }
