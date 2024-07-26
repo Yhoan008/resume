@@ -7,6 +7,7 @@ import mail from "./../../assets/mail.png";
 import linkedin from "./../../assets/linkedin.png";
 import git from "./../../assets/git.png";
 import wha from "./../../assets/wha.png";
+import hdv from "./../../assets/HDV.pdf";
 
 import Particles from "./Particles";
 
@@ -15,9 +16,8 @@ import { ScrollerContext } from "./../../context/Scroller";
 export default function Home() {
   const scroller = useContext(ScrollerContext);
 
-  // < 768 es tomado por movil
   return (
-    <div className="w-full h-[50vw] bg-[#9C9B99] relative flex justify-center items-center ">
+    <div className="w-full h-[50vw] bg-[#9C9B99] relative flex justify-center items-center " id="home" >
       <div className="absolute w-full h-full z-10 text-white flex flex-row ">
         <div className="flex justify-center flex-col items-center w-full p-10 ">
           <h1 className="mr-[50%] font-['Itim'] ">HOLA! SOY</h1>
@@ -28,20 +28,40 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-end items-end m-[100px] w-full gap-4 ">
           <div className="flex flex-row gap-4 ml-3 mb-4 ">
-            <a href="#" className="w-9 h-10">
+            <a
+              href="mailto:yhoanmoreno8@gmail.com?"
+              className="w-9 h-10"
+              target="_blank"
+            >
               <img src={mail} alt="icon Mail" className="w-full" />
             </a>
-            <a href="#" className="w-9 h-10">
+            <a
+              href="https://github.com/Yhoan008"
+              className="w-9 h-10"
+              target="_blank"
+            >
               <img src={git} alt="icon Git" className="w-full" />
             </a>
-            <a href="#" className="w-9 h-10">
+            <a
+              href="https://wa.me/573222561871?text=Hola, me gustaria conversar contigo."
+              className="w-9 h-10"
+              target="_blank"
+            >
               <img src={wha} alt="icon WahtsApp" className="w-full" />
             </a>
-            <a href="#" className="w-9 h-10">
+            <a
+              href="https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/"
+              className="w-9 h-10"
+              target="_blank"
+            >
               <img src={linkedin} alt="icon Linkedin" className="w-full" />
             </a>
           </div>
-          <button className="flex h-[20px] justify-center items-center gap-2 bg-[#E9D985] p-2 box-content rounded-xl ">
+          <a
+            className="flex h-[20px] justify-center items-center gap-2 bg-[#E9D985] p-2 box-content rounded-xl cursor-pointer "
+            href={hdv}
+            download="YhoanMoreno.pdf"
+          >
             <h1 className="font-['Itim'] text-xl text-black font-bold ">CV</h1>
             <div className="h-full ">
               <img
@@ -50,10 +70,9 @@ export default function Home() {
                 className="h-[100%] w-auto "
               />
             </div>
-          </button>
+          </a>
         </div>
       </div>
-      {/* Elemento Canvas */}
       <Particles />
       <img
         src={background}
@@ -63,12 +82,6 @@ export default function Home() {
       <div
         className={` w-[${window.innerWidth}px] h-[${window.innerWidth}px] shadow-[inset_0_0_0_350px_black] absolute z-20 rounded-full `}
       />
-      {/*       
-      
-      Componente basado en la anterior pagina de portafolio ----- Es estudio UI
-      <Shadow />  
-      
-      */}
       <div
         className="w-[135px] h-[135px] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 "
         style={{

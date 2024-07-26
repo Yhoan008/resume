@@ -23,6 +23,14 @@ export default {
           "40%": { transform: "scaleY(2)" },
           "100%": { transform: "scaleY(1)" },
         },
+        rotate: {
+          "0%": { transform: "translateX(0px) translateY(0px)" },
+          "20%": { transform: "translateX(0px) translateY(200px)" },
+          "40%": { transform: "translateX(200px) translateY(0px)" },
+          "60%": { transform: "translateX(0px) translateY(-200px)" },
+          "80%": { transform: "translateX(-200px) translateY(0px)" },
+          "1000%": { transform: "translateX(0px) translateY(0px)" },
+        },
       },
       fontFamily: {
         irishGrover: ['"Irish Grover"', "system-ui"],

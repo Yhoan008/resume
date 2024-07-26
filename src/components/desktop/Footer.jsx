@@ -12,7 +12,7 @@ export default function Footer() {
       <div>
         <h1>©2024 Yhoan Mateo Moreno</h1>
       </div>
-      <div className="flex flex-col justify-around items-center gap-6 " >
+      <div className="flex flex-col justify-around items-center gap-6 ">
         <div className="w-[100px]">
           <img
             src={logo}
@@ -20,21 +20,33 @@ export default function Footer() {
             className="w-full h-full object-contain"
           />
         </div>
-        <h1 className="text-center " >  
+        <h1 className="text-center ">
           Gracias por visitar mi portafolio, tu interés significa mucho para mi.
         </h1>
       </div>
       <div className="flex flex-row gap-4 ">
-        <a href="#" className="w-9 h-10">
+        <a href="mailto:yhoanmoreno8@gmail.com?" className="w-9 h-10">
           <img src={mail} alt="icon Mail" className="w-full" />
         </a>
-        <a href="#" className="w-9 h-10">
+        <a
+          href="https://github.com/Yhoan008"
+          target="_blank"
+          className="w-9 h-10"
+        >
           <img src={git} alt="icon Git" className="w-full" />
         </a>
-        <a href="#" className="w-9 h-10">
+        <a
+          href="https://wa.me/573222561871?text=Hola, me gustaria conversar contigo."
+          target="_blank"
+          className="w-9 h-10"
+        >
           <img src={wha} alt="icon WahtsApp" className="w-full" />
         </a>
-        <a href="#" className="w-9 h-10">
+        <a
+          href="https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/"
+          target="_blank"
+          className="w-9 h-10"
+        >
           <img src={linkedin} alt="icon Linkedin" className="w-full" />
         </a>
       </div>

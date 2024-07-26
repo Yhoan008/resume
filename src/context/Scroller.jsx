@@ -6,9 +6,11 @@ export default function ScrollerProvider({ children }) {
   const [scroller, setScroller] = useState(window.scrollY);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const scrollevent = window.addEventListener("scroll", () => {
       setScroller(window.scrollY);
     });
+
+    return window.removeEventListener("scroll", scrollevent);
   }, []);
 
   return (
