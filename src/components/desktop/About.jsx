@@ -16,7 +16,7 @@ export default function About() {
   const limit2 = 1200;
 
   return (
-    <div className="bg-[#011C39]">
+    <div className="bg-[#011C39] overflow-hidden  ">
       {abouts.map((index, id) => {
         return (
           <div
@@ -79,7 +79,7 @@ function Fond({ reverse }) {
 
   return (
     <div
-      className=" rounded-full shadow-[inset_0_0_50px_15px_rgba(0,0,0)] absolute animate-[rotate_100s_ease_infinite] "
+      className=" rounded-full shadow-[inset_0_0_50px_15px_rgba(0,90,201)] absolute animate-[rotate_100s_ease_infinite] "
       style={{
         width: radio,
         height: radio,
