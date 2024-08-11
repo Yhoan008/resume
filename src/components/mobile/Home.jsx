@@ -77,7 +77,7 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <img src={music} alt="Play Music" />
+          <img src={music} alt="Play Music" className=" animate-pulse " />
         )}
       </div>
     </div>

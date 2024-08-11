@@ -6,6 +6,7 @@ import About from "./About";
 import Proyects from "./Proyects";
 import Future from "./Future";
 import Footer from "./Footer";
+import Cockie from "../Cockie";
 
 export default function Desktop() {
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function Desktop() {
   return (
     <>
       <Navbar />
+      <Cockie />
       <Home />
       <About />
       <Proyects />
