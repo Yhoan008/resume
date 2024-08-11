@@ -3,6 +3,9 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { ScrollerContext } from "./../../context/Scroller";
 
 import codeimg from "./../../assets/prueba/code3.jpg";
+import proto from "./../../assets/proto.png";
+
+const photo = [codeimg, proto];
 
 export default function About() {
   const scroller = useContext(ScrollerContext);
@@ -12,7 +15,7 @@ export default function About() {
     "Además, como diseñador UX mi enfoque integral incluye investigaciones del público objetivo y estudios de usabilidad mediante encuestas y análisis para comprender las necesidades y expectativas de los usuarios; Esto se complementa con auditorias competitivas permitiéndome identificar tendencias y oportunidades clave.",
   ];
 
-  const limit1 = 500;
+  const limit1 = 450;
   const limit2 = 1200;
 
   return (
@@ -42,9 +45,9 @@ export default function About() {
                 }}
               >
                 <img
-                  src={codeimg}
+                  src={photo[id]}
                   alt="Coding"
-                  className="h-full rounded-3xl  "
+                  className="w-full h-full rounded-3xl object-contain "
                 />
               </div>
               <div

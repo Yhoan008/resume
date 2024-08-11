@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 
 import background from "./../../assets/background.png";
 import pausephone from "./../../assets/headphone.png";
@@ -9,6 +9,13 @@ import linkedin from "./../../assets/linkedin.png";
 import git from "./../../assets/git.png";
 import wha from "./../../assets/wha.png";
 import hdv from "./../../assets/HDV.pdf";
+
+import afrobeat from "./../../assets/music/afrobeat1.mp3";
+import beat1 from "./../../assets/music/beat1.mp3";
+import beat2 from "./../../assets/music/beat2.mp3";
+import beat3 from "./../../assets/music/beat3.mp3";
+import beat4 from "./../../assets/music/beat4.mp3";
+import beat5 from "./../../assets/music/MosesConcas Moonshines.mp3";
 
 import Particles from "./Particles";
 
@@ -89,24 +96,39 @@ export default function Home() {
   );
 }
 
-function Music() {
-  const [active, setActive] = useState(false);
+const beats = [afrobeat, beat1, beat2, beat3, beat4, beat5];
 
+function Music() {
   const scroller = useContext(ScrollerContext);
+
+  const audioref = useRef(null);
+  const [playing, setPlay] = useState(false);
+  const [song, setSong] = useState(0);
+
+  useEffect(() => {
+    playing ? audioref.current.play() : audioref.current.pause();
+  });
 
   return (
     <div
-      className="w-[135px] h-[135px] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 rounded-full bg-[#E9995E] "
+      className="w-[135px] h-[135px] fixed left-0 right-0 top-0 m-auto flex items-center justify-center transition z-30 rounded-full bg-[#E9995E] cursor-pointer "
       style={{
         transform: `translateY(${
           scroller > 80 ? -2.6 : 17 - scroller / 4
         }vw) scale(${scroller > 60 ? 40 : 100 - scroller}%) `,
       }}
       onClick={() => {
-        setActive((prev) => !prev);
+        setPlay((prev) => !prev);
       }}
     >
-      {active ? (
+      <audio
+        src={beats[song]}
+        ref={audioref}
+        onEnded={() => {
+          setSong((prev) => (prev < beats.length ? prev + 1 : 0));
+        }}
+      ></audio>
+      {playing ? (
         <>
           <div className="w-10 h-10  absolute bottom-4 flex justify-center items-center">
             <Line state={8} />
@@ -122,11 +144,17 @@ function Music() {
           />
         </>
       ) : (
-        <img
-          src={playphone}
-          alt="headphone"
-          className=" w-[80%] h-[80%] absolute "
-        />
+        <>
+          <img
+            src={playphone}
+            alt="headphone"
+            className=" w-[80%] h-[80%] absolute "
+          />
+          <div
+            className="w-full h-full absolute top-0 left-0 border-4 animate-[musicPulse_1s_ease-in_infinite] border-[#EA9A5E] rounded-full "
+            style={{ animationDelay: "1s" }}
+          />
+        </>
       )}
     </div>
   );

@@ -4,7 +4,7 @@ import Scroller from "./Scroller";
 import Footer from "./Footer";
 
 import { cases } from "./../json/cases";
-import scheme from "./../../assets/prueba/scheme.jpg";
+import scheme from "./../../assets/proto.png";
 import sound from "./../../assets/sound.png";
 
 export default function Content() {

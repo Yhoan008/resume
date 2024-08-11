@@ -53,7 +53,7 @@ function Tech({ containerScroll }) {
   return futures.map((index, id) => {
     return (
       <div
-        className=" min-w-[80vw] bg-gradient-to-b from-[#3E358B] to-[#1E3D4A] p-4 rounded-2xl text-center text-white "
+        className=" min-w-[80vw] bg-gradient-to-b from-[#3E358B] to-[#1E3D4A] p-4 rounded-2xl text-center text-white flex flex-col justify-between "
         onClick={() => {
           containerScroll.current.scrollLeft =
             id == 0 ? 0 : id == 1 ? fase - fase / 15 : fase * 2;
@@ -64,7 +64,7 @@ function Tech({ containerScroll }) {
           {index.title}
         </h1>
         <div className="w-full ">
-          <img src={index.image} alt="React Native" />
+          <img src={index.image} alt="React Native" className="w-full" />
         </div>
         <p className="font-['Itim']">{index.about}</p>
       </div>

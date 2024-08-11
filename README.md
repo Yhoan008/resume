@@ -1,8 +1,17 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌟 Mi Portafolio
+¡Hola! Soy Yhoan Mateo Moreno, desarrollador web con experiencia en crear aplicaciones dinámicas y escalables. Este portafolio reúne algunos de mis proyectos más destacados.
 
-Currently, two official plugins are available:
+🛠️ Tecnologías
+Frontend: JavaScript, React, HTML, CSS, TailWind
+Backend: Node.js, Express
+Bases de Datos: MongoDB
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📫 Contacto
+Puedes contactarme en yhoanmoreno8@gmail.com o [https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/](enlace a LinkedIn).
+
+
+
+Pendientes
+*Cockies de sonido
+*Cards 3D
