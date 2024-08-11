@@ -13,5 +13,4 @@ Puedes contactarme en yhoanmoreno8@gmail.com o [https://www.linkedin.com/in/yhoa
 
 
 Pendientes
-*Cockies de sonido
 *Cards 3D
