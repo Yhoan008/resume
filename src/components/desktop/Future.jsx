@@ -1,8 +1,4 @@
-import React from "react";
-
-import bootstrap from "./../../assets/bootstrap.png";
-import adobe from "./../../assets/adobe.jpg";
-import react from "./../../assets/react.jpg";
+import React, { useState } from "react";
 
 import { futures } from "./../json/futures";
 
@@ -17,24 +13,45 @@ export default function Future() {
         comprometido a continuar adquiriendo nuevos conocimientos y habilidades
         cruciales en mi carrera. Mis futuros aprendizajes incluirán:{" "}
       </p>
-      <div className="flex flex-wrap justify-around w-[90%] h-auto gap-10 mb-[100px] ">
+      <div className="flex flex-wrap justify-around w-[90%] h-auto gap-10 mb-[100px] mt-10 ">
         {futures.map((index, id) => {
-          return (
-            <div className=" w-[400px] h-[300px] relative " key={id}>
-              <img
-                src={index.image}
-                alt="Image Framework"
-                className="h-full object-cover rounded-2xl "
-              />
-              <div className="absolute bottom-0 p-2 text-center">
-                <p className="font-['Itim'] ">
-                  <span className="font-bold">{index.title} : </span>{" "}
-                  {index.about}
-                </p>
-              </div>
-            </div>
-          );
+          return <Card index={index} key={id} />;
         })}
+      </div>
+    </div>
+  );
+}
+
+function Card({ index }) {
+  const [active, setActive] = useState(false);
+
+  return (
+    <div
+      className=" w-[400px] h-[300px] relative  "
+      onMouseEnter={() => {
+        setActive(true);
+      }}
+      onMouseLeave={() => {
+        setActive(false);
+      }}
+      style={{ transformStyle: "preserve-3d" }}
+    >
+      <div
+        className="w-full h-full transition-transform duration-500 shadow-[0_0_20px_10px] shadow-slate-800 rounded-2xl "
+        style={{
+          transform: active ? "rotateY(360deg) scale(1.1) " : "",
+        }}
+      >
+        <img
+          src={index.image}
+          alt="Image Framework"
+          className="h-full object-cover rounded-2xl "
+        />
+        <div className="absolute bottom-0 p-2 text-center">
+          <p className="font-['Itim'] ">
+            <span className="font-bold">{index.title} : </span> {index.about}
+          </p>
+        </div>
       </div>
     </div>
   );
