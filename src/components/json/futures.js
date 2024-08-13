@@ -1,13 +1,13 @@
-import adobe from "./../../assets/adobe.jpg";
+import aws from "./../../assets/aws.jpg";
 import bootstrap from "./../../assets/bootstrap.png";
 import native from "./../../assets/react.jpg";
 
 export const futures = [
   {
-    title: "ADOBE XD",
-    image: adobe,
+    title: "AWS: (Amazon Web Services) ",
+    image: aws,
     about:
-      "Herramienta de diseño y prototipado para experiencias digitales, permite colaboración entre diseñadores e ingenieros",
+      "Plataforma de servicios en la nube que ofrece soluciones de infraestructura, almacenamiento, bases de datos, y más, para escalar y gestionar aplicaciones a nivel global.",
   },
   {
     title: "BOOTSTRAP",
