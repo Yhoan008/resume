@@ -9,8 +9,3 @@ Bases de Datos: MongoDB
 
 📫 Contacto
 Puedes contactarme en yhoanmoreno8@gmail.com o [https://www.linkedin.com/in/yhoan-mateo-moreno-35100a224/](enlace a LinkedIn).
-
-
-
-Pendientes
-*Cards 3D
