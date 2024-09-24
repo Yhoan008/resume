@@ -16,7 +16,6 @@ export default function Desktop() {
   return (
     <>
       <Navbar />
-      <Cockie />
       <Home />
       <About />
       <Proyects />
